@@ -5,6 +5,7 @@ Python 3.6.1 |Anaconda 4.4.0 (64-bit)| (default, May 11 2017, 13:09:58)
 Type "help", "copyright", "credits" or "license" for more information.
 >>> 1+1
 2
+
 >>> print("Hello World")
 Hello World
 >>> print('Hello World')
@@ -14,6 +15,9 @@ Hello World
     print('Hello World)
                       ^
 SyntaxError: EOL while scanning string literal
+
+
+#EXERCISE 1
 >>> print('Hello World'
 ...
 ... )
@@ -49,14 +53,16 @@ SyntaxError: invalid token
     2 3
       ^
 SyntaxError: invalid syntax
+
+#EXERCISE 2
 >>> (42 * 60) + 42
-2562
+2562 #seconds in 42:42
 >>> 10/1.61
-6.211180124223602
+6.211180124223602  #Miles in 10k
 >>> (((42*60)+42)/(10/1.61))
-412.482
+412.482  #Seconds/per mile
 >>> 412.482/60
-6.874700000000001
+6.874700000000001 #minutes/mile
 >>> 60*.8747
 52.482
 >>> 412.482%60
