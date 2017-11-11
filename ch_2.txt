@@ -34,3 +34,45 @@ TypeError: unsupported operand type(s) for ^: 'float' and 'int'
 38.1 #Total Run Time
 >>>
 #Leave at 6:52am and arrive 38:06 later at 7:30 pm and 6 seconds
+
+>>> from datetime import datetime
+>>> dt = datetime.datetime(2017, 10,24, 6, 52)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: type object 'datetime.datetime' has no attribute 'datetime'
+>>> dt = datetime(2017, 10,24, 6, 52)
+>>> delta = timedelta(mintues=38)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'timedelta' is not defined
+>>> from datetime import timedelta
+>>> delta = timedelta(mintues=38)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'mintues' is an invalid keyword argument for this function
+>>> delta = timedelta(minutes=38)
+>>> newtime = dt + delta
+>>> print(newtime)
+2017-10-24 07:30:00
+>>>
+KeyboardInterrupt
+>>> import datetime
+>>> tm = datetime.time(6, 52)
+>>> tm + delta
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unsupported operand type(s) for +: 'datetime.time' and 'datetime.timedelta'
+>>> newtime = tm + delta
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unsupported operand type(s) for +: 'datetime.time' and 'datetime.timedelta'
+>>> oldtime = time(6, 52)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'time' is not defined
+>>> from datetime import time
+>>> oldtime = time(6,52)
+>>>
+
+#from x import y - don't need to do x.y, just y()
+# import x - now I need to qualify y with x like x.y()
