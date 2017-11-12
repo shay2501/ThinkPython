@@ -1,12 +1,13 @@
 import math
 
-while True:
-    line = input('> ')
-    if line == 'done':
-        break
-    print(line)
+def eval_loop():
+    while True:
+        line = input('> ')
+        if line == 'done':
+            break
+        print(eval(line))
 
-print('Done!')
+#print('Done!')
 
 
 def mysqrt( a ):
@@ -32,6 +33,30 @@ def test_square_root():
             print(a, '   ', my, '     ', ma, '  ', my - ma)
             a = a + 1
 
-test_square_root()
+def factorial(n):
+    if(n == 0):
+        return 1
 
-#print(mysqrt(1))
+    return n * factorial(n-1)
+
+def estimate_pi():
+    factor = (2 * math.sqrt(2))/9801
+    total = 0
+    min = 1e-15
+    k=0
+    while True:
+        num = factorial(4*k) * (1103 + (26390 * k))
+        den = factorial(k)** 4 * 396**(4*k)
+        term = (num/den) * factor
+        total += term
+        if(abs(term) < min):
+            break
+        k+=1
+    return 1/total
+
+
+#test_square_root()
+#eval_loop()
+
+print(estimate_pi())
+print(math.pi)
