@@ -71,11 +71,28 @@ def recurse(n, s):
     else:
         recurse(n-1, n+s)
 
+def koch(t, l):
+    angle = 60
+    d = 3
+    if l < 3:
+        t.fd(l)
+
+    else:
+         koch(t, l/d)
+         t.lt(angle)
+         koch(t,l/d)
+         t.rt(angle * 2)
+         koch(t,l/d)
+         t.lt(angle)
+         koch(t,l/d)
+
 recurse(3, 0)
 
 do_n(printStuff, 10)
 get_time()
 #do_fermat()
 #check_triangle()
-draw(turtle.Turtle(), 5, 50)
+bob = turtle.Turtle()
+#draw(bob, 5, 15)
+koch(bob, 100)
 turtle.mainloop()
